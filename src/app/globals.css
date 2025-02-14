@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+.light {
   --background: #edf2f4;
   --foreground: #2b2d42;
+  --accent: #7b8831;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #2b2d42;
-    --foreground: #edf2f4;
-  }
+.dark {
+  --background: #2b2d42;
+  --foreground: #edf2f4;
+  --accent: #fa7c8a;
 }
 
 body {

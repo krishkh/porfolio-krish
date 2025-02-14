@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home } from "lucide-react";
-
+import Image from "next/image";
+import { useTheme } from "../context/ThemeContext";
 // TypeScript interface for nav items
 interface NavItem {
   name: string;
@@ -20,28 +20,42 @@ const navItems: NavItem[] = [
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
 
   return (
     <nav>
-      <div className="flex  gap-10 p-2 w-full bg-background">
+      <div className="flex w-full border-b-8 border-foreground bg-accent">
         {navItems.map((item, index) =>
           index === 0 ? (
             <Link
-              className="item-black font-roboto border-foreground"
+              className="border-r-8 border-foreground p-2 px-8 bg-background hover:bg-transparent"
               key={index}
               href={item.href}
             >
-              <Home className="h-12 w-12" />
+              <Image
+                height={100}
+                width={100}
+                src={theme === "light" ? "/lightHome.svg" : "/darkHome.svg"}
+                alt="Home"
+                className="h-16 w-16"
+              />
             </Link>
           ) : (
-            <div
+            <Link
+              href={item.href}
               key={index}
-              className="item-black font-roboto font-bold text-5xl border-foreground"
+              className="bg-background border-r-8 px-14 border-foreground py-2 font-roboto font-bold text-7xl hover:bg-transparent hover:text-background transition-colors"
             >
               {item.name}
-            </div>
+            </Link>
           )
         )}
+        <div
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          className="bg-background border-r-8 px-14 border-foreground py-2 font-roboto font-bold text-7xl hover:bg-transparent hover:text-background transition-colors cursor-pointer"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </div>
       </div>
     </nav>
   );
