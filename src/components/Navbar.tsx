@@ -20,7 +20,7 @@ const navItems: NavItem[] = [
 
 const Navbar = () => {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav>
@@ -51,7 +51,7 @@ const Navbar = () => {
           )
         )}
         <div
-          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          onClick={() => toggleTheme()}
           className="bg-background border-r-8 px-14 border-foreground py-2 font-roboto font-bold text-7xl hover:bg-transparent hover:text-background transition-colors cursor-pointer"
         >
           {theme === "light" ? "🌙" : "☀️"}
