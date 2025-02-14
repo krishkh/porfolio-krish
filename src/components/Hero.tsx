@@ -1,10 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useTheme } from "../context/ThemeContext";
 
 const Hero = () => {
-  const { theme } = useTheme();
-
   return (
     <div className="absolute bottom-0">
       <div className="flex items-center justify-center">

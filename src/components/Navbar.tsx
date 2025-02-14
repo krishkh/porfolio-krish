@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -19,7 +19,6 @@ const navItems: NavItem[] = [
 ];
 
 const Navbar = () => {
-  const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
   return (
