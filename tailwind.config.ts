@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         roboto: ["var(--font-roboto)"],
         comfortaa: ["var(--font-comfortaa)"],
+        handlee: ["var(--font-handlee)"],
+        shadow: ["var(--font-shadow)"],
       },
     },
   },

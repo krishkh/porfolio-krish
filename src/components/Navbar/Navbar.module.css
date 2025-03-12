@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 0.75rem 2rem;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-handlee);
+  font-size: 2.75rem;
+  color: white;
+}
+
+.logoStar {
+  font-size: 1.75rem;
+  margin-right: 0.5rem;
+  color: white;
+}
+
+.navList {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  font-family: var(--font-comfortaa);
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  padding: 0.25rem 0;
+}
+
+/* Active underline animation */
+.activeUnderline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #f0b429;
+  border-radius: 2px;
+}
+
+/* Hover underline animation */
+.navItem::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background: #f0b429;
+  border-radius: 2px;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.navItem:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Don't show the hover effect on active items */
+.active::after {
+  display: none;
+}
+
+/* Mobile menu animations */
+.mobileMenu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+/* Hamburger menu styling */
+.hamburgerContainer {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.hamburgerBar {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.hamburgerBar:nth-child(1) {
+  top: 0px;
+}
+
+.hamburgerBar:nth-child(2),
+.hamburgerBar:nth-child(3) {
+  top: 10px;
+}
+
+.hamburgerBar:nth-child(4) {
+  top: 20px;
+}
+
+.hamburgerOpen .hamburgerBar:nth-child(1) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+.hamburgerOpen .hamburgerBar:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerBar:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.hamburgerOpen .hamburgerBar:nth-child(4) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}

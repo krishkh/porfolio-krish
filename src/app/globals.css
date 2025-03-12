@@ -7,12 +7,14 @@
   --background: #edf2f4;
   --foreground: #2b2d42;
   --accent: #3dad2f;
+  --background-transparent: rgba(237, 242, 244, 0.8);
 }
 
 .dark {
   --background: #2b2d42;
   --foreground: #edf2f4;
   --accent: #fa7c8a;
+  --background-transparent: rgba(43, 45, 66, 0.8);
 }
 
 body {
