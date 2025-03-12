@@ -27,6 +27,13 @@ const projects = [
     imageUrl: "/projects/adlantic.png",
     link: "/projects/adlantic",
   },
+  {
+    id: 4,
+    title: "First-Female",
+    description: "An ecommerce application specifically for women needs",
+    imageUrl: "/projects/first-female.png",
+    link: "/projects/first-female",
+  },
 ];
 
 export default function ProjectsGrid() {

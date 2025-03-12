@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 const navItems = [
   { name: "CV", path: "/cv" },
-  { name: "Projects", path: "/projects" },
+  { name: "Work", path: "/work" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "Hire Me", path: "/hire-me" },
 ];
