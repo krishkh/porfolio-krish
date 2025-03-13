@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
@@ -39,7 +39,7 @@ const projects = [
 ];
 
 export default function ProjectsGrid() {
-  const [hasHover, setHasHover] = useState(false);
+  // const [hasHover, setHasHover] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   // Mobile view
@@ -79,8 +79,8 @@ export default function ProjectsGrid() {
 
         <div
           className="preview__container flex flex-wrap justify-center gap-8 py-8 min-h-[600px]"
-          onMouseEnter={() => setHasHover(true)}
-          onMouseLeave={() => setHasHover(false)}
+          // onMouseEnter={() => setHasHover(true)}
+          // onMouseLeave={() => setHasHover(false)}
           style={{
             display: "flex",
             flexWrap: "wrap",

@@ -13,8 +13,8 @@ export default function ProjectsPage() {
           </h1>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl">
             Explore my portfolio of projects which I have worked on and built.
-            Each card represents a unique project I've worked on. Hover over a
-            card to see more details and click to visit the project.
+            Each card represents a unique project I&apos;ve worked on. Hover
+            over a card to see more details and click to visit the project.
           </p>
         </div>
 

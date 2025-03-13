@@ -43,11 +43,11 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto">
           <div className="mb-10 sm:mb-16 text-center">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
-              Let's Connect
+              Let&apos;s Connect
             </h1>
             <p className="text-white/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-2">
-              I'm always open to new opportunities and collaborations. Feel free
-              to reach out through any of the channels below.
+              I&apos;m always open to new opportunities and collaborations. Feel
+              free to reach out through any of the channels below.
             </p>
           </div>
 
@@ -73,8 +73,8 @@ const ContactPage = () => {
             </h2>
             <p className="text-white/80 text-sm sm:text-base max-w-2xl mx-auto px-2">
               Whether you have a project in mind, a question about my work, or
-              just want to say hello, I'm always excited to connect with new
-              people and explore potential collaborations.
+              just want to say hello, I&apos;m always excited to connect with
+              new people and explore potential collaborations.
             </p>
           </div>
         </div>
