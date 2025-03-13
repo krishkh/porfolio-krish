@@ -2,6 +2,7 @@
 
 // import { useState } from "react";
 import ProjectCard from "./ProjectCard";
+import ProjectCardMobile from "./ProjectCardMobile";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 // Sample project data - replace with your actual projects
@@ -47,18 +48,17 @@ export default function ProjectsGrid() {
     return (
       <div className="w-full py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
             My <span className="text-[#f0b429]">Projects</span>
           </h2>
 
           <div className="space-y-6 pb-8">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <div key={project.id} className="w-full">
-                <ProjectCard
+                <ProjectCardMobile
                   imageUrl={project.imageUrl}
                   title={project.title}
                   description={project.description}
-                  index={index}
                   link={project.link}
                 />
               </div>
