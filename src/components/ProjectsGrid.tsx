@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 // Sample project data - replace with your actual projects
 const projects = [
@@ -39,7 +40,36 @@ const projects = [
 
 export default function ProjectsGrid() {
   const [hasHover, setHasHover] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
+  // Mobile view
+  if (isMobile) {
+    return (
+      <div className="w-full py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 text-center">
+            My <span className="text-[#f0b429]">Projects</span>
+          </h2>
+
+          <div className="space-y-6 pb-8">
+            {projects.map((project, index) => (
+              <div key={project.id} className="w-full">
+                <ProjectCard
+                  imageUrl={project.imageUrl}
+                  title={project.title}
+                  description={project.description}
+                  index={index}
+                  link={project.link}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop view - keep original design
   return (
     <div className="w-full py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
