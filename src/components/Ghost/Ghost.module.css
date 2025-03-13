@@ -1,0 +1,48 @@
+@property --ghost-eye-x {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --ghost-eye-y {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.ghostContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.ghost {
+  width: 50%;
+  max-width: 500px;
+  height: auto;
+}
+
+.eye,
+.dot {
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translate(
+    calc(var(--ghost-eye-x) * 1px),
+    calc(var(--ghost-eye-y) * 1px)
+  );
+}
+
+@media (max-width: 768px) {
+  .ghost {
+    width: 70%;
+  }
+}
