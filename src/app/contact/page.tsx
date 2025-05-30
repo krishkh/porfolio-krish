@@ -129,6 +129,13 @@ const ContactPage = () => {
     <div className={styles.container}>
       <canvas ref={canvasRef} className={styles.particles}></canvas>
       <Ghost />
+      {/* <img
+        src="http://localhost:8000/track-pixel?clickId=6800f4c9cc06680e99e92815&conversion=true"
+        width="1"
+        height="1"
+        style={{ display: "none" }}
+        alt=""
+      /> */}
       <div className={styles.content}>
         <div className={styles.header}>
           <h1 className={styles.title}>Let&apos;s Connect</h1>

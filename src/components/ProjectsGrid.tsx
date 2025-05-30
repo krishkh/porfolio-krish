@@ -21,21 +21,54 @@ const projects = [
     description:
       "A website for a finance private limited, for them to reach more audience while creating an easier access for the users to buy their services",
     imageUrl: "/projects/firstStartup.png",
-    link: "/projects/first-startup",
+    link: "https://www.firststartup.in/",
   },
   {
     id: 3,
     title: "Adlantic",
     description: "A landing page for the company Adlantic",
     imageUrl: "/projects/adlantic.png",
-    link: "/projects/adlantic",
+    link: "https://www.adlantic.in/",
   },
   {
     id: 4,
-    title: "First-Female",
-    description: "An ecommerce application specifically for women needs",
-    imageUrl: "/projects/first-female.png",
-    link: "/projects/first-female",
+    title: "Threads-backend",
+    description:
+      "A backend for a social media app, Threads/Twitter using graphql",
+    imageUrl: "/projects/threads.png",
+    link: "https://github.com/krishkh/threads-backend-graphql",
+  },
+  {
+    id: 5,
+    title: "Tic-Tac-Multi",
+    description:
+      "A backend for a Tic-Tac-Toe game, allowing multiple players to play the game simultaneously",
+    imageUrl: "/projects/tic-tac-toe.png",
+    link: "https://github.com/krishkh/Tic-Tac-Multi",
+  },
+  {
+    id: 6,
+    title: "Mi Amor",
+    description:
+      "Mi amor, making unofficial relationships official, a dating app for people to find their love",
+    imageUrl: "/projects/mi-amor.png",
+    link: "https://mi-amor-green.vercel.app/",
+  },
+  {
+    id: 7,
+    title: "Admin Dashboard",
+    description:
+      "An Admin Dashboard for a community, to view members, and do quick modifications to their website through this portal",
+    imageUrl: "/projects/admin-dashboard.png",
+    link: "https://admin.kaizentechsociety.xyz/",
+  },
+  {
+    id: 8,
+    title: "Kaizen Notes",
+    description:
+      "A note access repository for aktu students, to access notes of all subjects.",
+    imageUrl: "/projects/notes.png",
+    link: "https://admin.kaizentechsociety.xyz/",
   },
 ];
 
