@@ -8,46 +8,22 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 // Sample project data - replace with your actual projects
 const projects = [
   {
-    id: 1,
-    title: "bidding-portal",
-    description:
-      "A CRM designed to suit the needs of a buisness streamlining managing tenders",
-    imageUrl: "/projects/bidding-portal.png",
-    link: "/projects/bidding-portal",
-  },
-  {
-    id: 2,
-    title: "first-startup",
+    id: 3,
+    title: "First Startup",
     description:
       "A website for a finance private limited, for them to reach more audience while creating an easier access for the users to buy their services",
     imageUrl: "/projects/firstStartup.png",
     link: "https://www.firststartup.in/",
   },
   {
-    id: 3,
-    title: "Adlantic",
-    description: "A landing page for the company Adlantic",
-    imageUrl: "/projects/adlantic.png",
-    link: "https://www.adlantic.in/",
+    id: 1,
+    title: "Never Forget",
+    description: "An app which remembers, so you dont have to.",
+    imageUrl: "/projects/neverForget.png",
+    link: "https://github.com/sooraj002/neverforget",
   },
   {
-    id: 4,
-    title: "Threads-backend",
-    description:
-      "A backend for a social media app, Threads/Twitter using graphql",
-    imageUrl: "/projects/threads.png",
-    link: "https://github.com/krishkh/threads-backend-graphql",
-  },
-  {
-    id: 5,
-    title: "Tic-Tac-Multi",
-    description:
-      "A backend for a Tic-Tac-Toe game, allowing multiple players to play the game simultaneously",
-    imageUrl: "/projects/tic-tac-toe.png",
-    link: "https://github.com/krishkh/Tic-Tac-Multi",
-  },
-  {
-    id: 6,
+    id: 2,
     title: "Mi Amor",
     description:
       "Mi amor, making unofficial relationships official, a dating app for people to find their love",
@@ -55,7 +31,7 @@ const projects = [
     link: "https://mi-amor-green.vercel.app/",
   },
   {
-    id: 8,
+    id: 4,
     title: "Kaizen Notes",
     description:
       "A note access repository for aktu students, to access notes of all subjects.",
@@ -63,11 +39,43 @@ const projects = [
     link: "https://notes.kaizentechsociety.xyz/",
   },
   {
+    id: 5,
+    title: "Adlantic",
+    description: "A landing page for the company Adlantic",
+    imageUrl: "/projects/adlantic.png",
+    link: "https://www.adlantic.in/",
+  },
+  {
+    id: 6,
+    title: "Playgamez",
+    description:
+      "An e-commerce website for gamers, to buy gaming related products and accessories",
+    imageUrl: "/projects/playgamez.png",
+    link: "https://playgamez.in/",
+  },
+  {
+    id: 7,
+    title: "Threads-backend",
+    description:
+      "A backend for a social media app, Threads/Twitter using graphql",
+    imageUrl: "/projects/threads.png",
+    link: "https://github.com/krishkh/threads-backend-graphql",
+  },
+  {
+    id: 8,
+    title: "Tic-Tac-Multi",
+    description:
+      "A backend for a Tic-Tac-Toe game, allowing multiple players to play the game simultaneously",
+    imageUrl: "/projects/tic-tac-toe.png",
+    link: "https://github.com/krishkh/Tic-Tac-Multi",
+  },
+  {
     id: 9,
-    title: "Never Forget",
-    description: "An app which remembers, so you dont have to.",
-    imageUrl: "/projects/neverForget.png",
-    link: "https://github.com/sooraj002/neverforget",
+    title: "bidding-portal",
+    description:
+      "A CRM designed to suit the needs of a buisness streamlining managing tenders",
+    imageUrl: "/projects/bidding-portal.png",
+    link: "/projects/nda",
   },
 ];
 
