@@ -55,20 +55,19 @@ const projects = [
     link: "https://mi-amor-green.vercel.app/",
   },
   {
-    id: 7,
-    title: "Admin Dashboard",
-    description:
-      "An Admin Dashboard for a community, to view members, and do quick modifications to their website through this portal",
-    imageUrl: "/projects/admin-dashboard.png",
-    link: "https://admin.kaizentechsociety.xyz/",
-  },
-  {
     id: 8,
     title: "Kaizen Notes",
     description:
       "A note access repository for aktu students, to access notes of all subjects.",
     imageUrl: "/projects/notes.png",
-    link: "https://admin.kaizentechsociety.xyz/",
+    link: "https://notes.kaizentechsociety.xyz/",
+  },
+  {
+    id: 9,
+    title: "Never Forget",
+    description: "An app which remembers, so you dont have to.",
+    imageUrl: "/projects/neverForget.png",
+    link: "https://github.com/sooraj002/neverforget",
   },
 ];
 
