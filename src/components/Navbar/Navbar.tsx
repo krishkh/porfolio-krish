@@ -47,10 +47,8 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#020611]/90 backdrop-blur-sm py-2"
-          : "bg-transparent py-4"
-      }`}
+        scrolled ? "backdrop-blur-lg py-2" : "bg-transparent py-4"
+      } ${isMenuOpen ? "h-screen" : ""}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -115,7 +113,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-[#020611]/98 backdrop-blur-md md:hidden z-40
+        className={`bg-black/40 absolute backdrop-blur-md inset-0 min-h-screen md:hidden 
                     transform transition-transform duration-300 ease-in-out
                     ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
