@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, Comfortaa, Handlee, Vast_Shadow } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
-
+import { Analytics } from "@vercel/analytics/next";
 const roboto = Roboto({
   variable: "--font-roboto",
   weight: ["300", "400", "500", "700"],
@@ -40,6 +40,7 @@ export default function RootLayout({
         className={`${roboto.variable} ${comfortaa.variable} ${handlee.variable} ${vast_shadow.variable} antialiased`}
       >
         {/* Navbar */}
+        <Analytics />
         <Navbar />
         {children}
       </body>
