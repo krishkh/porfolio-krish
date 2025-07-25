@@ -3,6 +3,7 @@ import { Roboto, Comfortaa, Handlee, Vast_Shadow } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 const roboto = Roboto({
   variable: "--font-roboto",
   weight: ["300", "400", "500", "700"],
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${comfortaa.variable} ${handlee.variable} ${vast_shadow.variable} antialiased`}
       >
+        <Script src="https://api.tracker.krishkh.xyz/tracking.js"></Script>
         {/* Navbar */}
         <Analytics />
         <Navbar />

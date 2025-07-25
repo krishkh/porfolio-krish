@@ -5,13 +5,22 @@ import React from "react";
 const MePage = () => {
   return (
     <Background>
+      {/* below is the ssd test account's conversion pixel */}
       {/* <img
-        src="https://trackerapi.mafibeta.fun/track-pixel?clickId=680767ed34baabe1090f5948&conversion=true"
+        src="http://localhost:8000/track-pixel?clickId=6853e9953db1ea98f2ad606a"
         width={1}
         height={1}
         style={{ display: "none" }}
         alt=""
       /> */}
+      {/* <img
+        src="https://trackerapi.mafibeta.fun/track-pixel?clickId=6853e9953db1ea98f2ad606a&conversion=true"
+        width="1"
+        height="1"
+        style="display:none;"
+        alt=""
+      /> */}
+
       <div className="min-h-screen font-roboto flex flex-col justify-center pl-20 md:pl-40">
         <h1 className="text-4xl md:text-8xl text-white font-black">hi</h1>
         <p className="text-white text-4xl md:text-7xl font-thin">
