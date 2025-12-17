@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
-export default function Background({ children }: { children: ReactNode }) {
+export default function Background({theme = "background", children }: { theme?: "blog" | "background", children: ReactNode }) {
   return (
-    <div className="relative min-h-screen bg-[#020611]">
+    <div className={`relative min-h-screen ${theme === "background" ? "bg-[#020611]" : "bg-[#282213]"}`}>
       <div
         className="absolute inset-0"
         style={{
@@ -15,7 +15,7 @@ export default function Background({ children }: { children: ReactNode }) {
 
       {/* Dashed vertical line with gaps */}
       <div
-        className="absolute left-10 top-0 bottom-0 w-[4px]"
+        className="absolute left-[23px] top-0 bottom-0 w-[3px] border-l-[3px] border-dashed border-white"
         style={{
           background:
             "repeating-linear-gradient(to bottom, white, white 60px, transparent 20px, transparent 80px)",

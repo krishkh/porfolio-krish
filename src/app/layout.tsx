@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Comfortaa, Handlee, Vast_Shadow } from "next/font/google";
+import { Roboto, Comfortaa, Handlee, Vast_Shadow, Montserrat, Lato } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { Analytics } from "@vercel/analytics/next";
@@ -25,6 +25,16 @@ const vast_shadow = Vast_Shadow({
   weight: "400",
   subsets: ["latin"],
 });
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+const lato = Lato({
+  variable: "--font-lato",
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+});
 export const metadata: Metadata = {
   title: "Krish Khanna",
   description: "A showcase of my work and words.",
@@ -38,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${comfortaa.variable} ${handlee.variable} ${vast_shadow.variable} antialiased`}
+        className={`${roboto.variable} ${comfortaa.variable} ${handlee.variable} ${vast_shadow.variable} ${montserrat.variable} ${lato.variable} antialiased`}
       >
         <Script src="https://api.tracker.krishkh.xyz/tracking.js"></Script>
         {/* Navbar */}

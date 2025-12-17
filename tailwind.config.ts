@@ -18,6 +18,8 @@ export default {
         comfortaa: ["var(--font-comfortaa)"],
         handlee: ["var(--font-handlee)"],
         shadow: ["var(--font-shadow)"],
+        montserrat: ["var(--font-montserrat)"],
+        lato: ["var(--font-lato)"],
       },
       animate: {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
