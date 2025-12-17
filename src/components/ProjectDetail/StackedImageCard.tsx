@@ -18,12 +18,13 @@ export default function StackedImageCard({
   imageType,
   index,
   isActive,
-  totalCards,
   onClick,
   zIndex,
+  totalCards,
   visualStackPosition,
 }: StackedImageCardProps) {
   const isMobile = imageType === "mobile";
+  console.log(totalCards, visualStackPosition);
 
   return (
     <div
