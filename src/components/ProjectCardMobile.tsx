@@ -59,3 +59,4 @@ const ProjectCardMobile = ({
 };
 
 export default ProjectCardMobile;
+

@@ -19,42 +19,26 @@ export default function StackedImageGallery({
     );
   }
 
-  // Get active image type to adjust container height
   const activeImageType = images[activeIndex]?.type || "desktop";
   const isMobileActive = activeImageType === "mobile";
 
-  // Adjust container height based on active image type
   const containerHeight = isMobileActive
     ? "h-[700px] lg:h-[900px]"
     : "h-[600px] lg:h-[800px]";
 
-  // Calculate visual stack position for each card
-  // Cards are stacked with index 0 at the back, higher indices in front
-  // When a card is clicked, it moves to the front (position 0)
   const getVisualStackPosition = (imageIndex: number): number => {
     if (imageIndex === activeIndex) {
-      return 0; // Active card is always on top
+      return 0;
     }
-    // For non-active cards, calculate their position
-    // Cards with higher indices than active are behind it
-    // Cards with lower indices than active are also behind it
     if (imageIndex < activeIndex) {
-      // This card is before the active one in the array
       return activeIndex - imageIndex;
     } else {
-      // This card is after the active one in the array
       return imageIndex - activeIndex;
     }
   };
 
   return (
-    <div 
-      className={`relative w-full ${containerHeight}`}
-      style={{
-        perspective: "1200px",
-        perspectiveOrigin: "50% 50%",
-      }}
-    >
+    <div className={`relative w-full ${containerHeight}`}>
       {images.map((image, index) => {
         const isActive = index === activeIndex;
         const visualStackPosition = getVisualStackPosition(index);
