@@ -3,6 +3,7 @@
 import { ProjectDetail, ProjectImage } from "@/data/projects";
 import Background from "../ui/Background";
 import StackedImageGallery from "./StackedImageGallery";
+import Link from "next/link";
 
 interface ProjectDetailProps {
   project: ProjectDetail;
@@ -11,6 +12,9 @@ interface ProjectDetailProps {
 export default function ProjectDetailComponent({ project }: ProjectDetailProps) {
   // Use only the images array - no legacy fallback
   const images: ProjectImage[] = project.images || [];
+  
+  // Check if link is external (starts with http:// or https://)
+  const isExternalLink = project.link.startsWith("http://") || project.link.startsWith("https://");
 
   return (
     <Background theme="blog">
@@ -26,6 +30,28 @@ export default function ProjectDetailComponent({ project }: ProjectDetailProps) 
                   <h1 className="font-montserrat font-medium leading-normal text-[32px] text-white whitespace-pre-wrap break-words">
                     {String(project.id).padStart(2, "0")} / {project.title}
                   </h1>
+                  {/* View Project Button */}
+                  {project.link && (
+                    <div className="mt-6">
+                      {isExternalLink ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center px-6 py-3 bg-[#d3e6fb] hover:bg-[#b8d9f5] transition-colors rounded-[6px] font-montserrat font-normal text-[20px] text-[#031028] tracking-[-0.2px]"
+                        >
+                          View Project
+                        </a>
+                      ) : (
+                        <Link
+                          href={project.link}
+                          className="inline-flex items-center justify-center px-6 py-3 bg-[#d3e6fb] hover:bg-[#b8d9f5] transition-colors rounded-[6px] font-montserrat font-normal text-[20px] text-[#031028] tracking-[-0.2px]"
+                        >
+                          View Project
+                        </Link>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {/* Content Sections */}

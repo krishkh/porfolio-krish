@@ -5,7 +5,7 @@ import Background from "@/components/ui/Background";
 import { FiDownload, FiExternalLink } from "react-icons/fi";
 
 const CVPage = () => {
-  const pdfUrl = "/krish khanna resume.pdf";
+  const pdfUrl = "/krish khanna.pdf";
 
   return (
     <Background>
