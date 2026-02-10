@@ -50,7 +50,9 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${comfortaa.variable} ${handlee.variable} ${vast_shadow.variable} ${montserrat.variable} ${lato.variable} antialiased`}
       >
-        <Script src="https://api.tracker.krishkh.xyz/tracking.js"></Script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3832681614268728"
+     crossOrigin="anonymous"></script>
+        {/* <Script src="https://api.tracker.krishkh.xyz/tracking.js"></Script> */}
         {/* Navbar */}
         <Analytics />
         <Navbar />
