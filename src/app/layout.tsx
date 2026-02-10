@@ -3,7 +3,6 @@ import { Roboto, Comfortaa, Handlee, Vast_Shadow, Montserrat, Lato } from "next/
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { Analytics } from "@vercel/analytics/next";
-import Script from "next/script";
 const roboto = Roboto({
   variable: "--font-roboto",
   weight: ["300", "400", "500", "700"],

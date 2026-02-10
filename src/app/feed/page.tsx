@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 import Script from "next/script";
 
 declare global {
@@ -138,7 +138,7 @@ export default function FeedPage() {
             data-ad-layout-key="-gw-3+1f-3d+2z"
             data-ad-client="ca-pub-3832681614268728"
             data-ad-slot="2443735749"></ins>
-        <Script>
+        <Script id="adsbygooglescript">
             (adsbygoogle = window.adsbygoogle || []).push({});
         </Script>
         </>
