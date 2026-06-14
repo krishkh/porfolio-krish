@@ -17,7 +17,8 @@ const config: Config = {
       },
     ],
   },
-  testMatch: ['**/__tests__/**/*.test.ts'],
+  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
+  testMatch: ['<rootDir>/src/**/__tests__/**/*.test.ts'],
 };
 
 export default config;
