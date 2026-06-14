@@ -37,6 +37,45 @@ export const projects: ProjectDetail[] = [
     images: [{ url: "/projects/neverForget.png", type: "mobile" }],
   },
   {
+    id: 10,
+    title: "Eclipse Intel",
+    description:
+      "A full-stack cyber threat intelligence platform that aggregates ransomware data, dark web activity, and exposed credentials with AI-powered analysis.",
+    imageUrl: "/projects/eclipse-intel.png",
+    link: "/projects/nda",
+    projectOverview:
+      "Eclipse Intel is a threat intelligence aggregation platform that centralizes ransomware victim data, dark web forum posts, and exposed credentials into a single dashboard. It has multiple data sources. The platform uses AI to analyze trends, detect potential compromises, and provide actionable insights to security teams before breaches become public.",
+    problemStatement:
+      "Organizations face increasing threats from ransomware groups and dark web actors, but intelligence is fragmented across scattered sources, visibility is limited, and monitoring is manual and reactive. A centralized platform is needed to aggregate threat data, detect compromises proactively, and deliver actionable insights before breaches become public.",
+    myRole: [
+      "Full-stack development",
+      "System architecture design",
+      "Backend API development",
+      "Frontend development",
+      "AI integration (LangChain/LangGraph)",
+      "Database modeling",
+    ],
+    images: [{ url: "/projects/eclipse-intel.png", type: "desktop" }],
+  },
+  {
+    id: 11,
+    title: "Eclipse Intel — Landing Page",
+    description:
+      "A premium marketing website showcasing Eclipse Intel's cybersecurity threat intelligence platform with interactive 3D globe and animations.",
+    imageUrl: "/projects/eclipse-landing.png",
+    link: "https://eclipseintel.com",
+    projectOverview:
+      "Built a high-performance cybersecurity marketing platform using Next.js, Three.js, GSAP, and Sanity CMS. The website showcases Eclipse Intel's threat intelligence capabilities through interactive 3D visualizations, animated storytelling sections, live statistics, and a CMS-powered blog while maintaining strong performance across desktop and mobile devices.",
+    myRole: [
+      "Frontend development (Next.js 16)",
+      "Animation system design (Framer Motion, GSAP)",
+      "UI/UX design",
+      "Sanity CMS integration",
+      "Responsive implementation",
+    ],
+    images: [{ url: "/projects/eclipse-landing.png", type: "desktop" }],
+  },
+  {
     id: 2,
     title: "Mi Amor",
     description:
@@ -209,6 +248,6 @@ export function getProjectById(id: number): ProjectDetail | undefined {
 export function getProjectBySlug(slug: string): ProjectDetail | undefined {
   return projects.find(
     (project) =>
-      project.title.toLowerCase().replace(/\s+/g, "-") === slug.toLowerCase()
+      project.title.toLowerCase().replace(/\s+/g, "-") === slug.toLowerCase(),
   );
 }
