@@ -18,7 +18,7 @@ export function getNextSpawnDelay(elapsedSeconds: number): number {
 }
 
 export function getFallSpeed(elapsedSeconds: number): number {
-  const increments = Math.floor(elapsedSeconds / 30);
+  const increments = Math.floor(Math.max(elapsedSeconds, 0) / 30);
   return Math.min(150 + increments * 10, 220);
 }
 

@@ -32,6 +32,7 @@ describe('getFallSpeed', () => {
   it('returns 160 at 30s', () => expect(getFallSpeed(30)).toBe(160));
   it('returns 170 at 60s', () => expect(getFallSpeed(60)).toBe(170));
   it('caps at 220', () => expect(getFallSpeed(10000)).toBe(220));
+  it('returns 150 for negative elapsed time', () => expect(getFallSpeed(-5)).toBe(150));
 });
 
 describe('checkNewAchievements', () => {
