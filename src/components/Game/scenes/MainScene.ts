@@ -62,6 +62,7 @@ export class MainScene extends Phaser.Scene {
     const hudBg = this.add.graphics();
     hudBg.fillStyle(0x080810, 0.95);
     hudBg.fillRect(0, 0, W, PLAY_TOP - 4);
+    hudBg.setDepth(9);
 
     this.scoreLabel = this.add.text(14, 10, 'Score: 0', {
       fontSize: '15px', color: '#ffffff', fontFamily: 'monospace',
@@ -90,6 +91,7 @@ export class MainScene extends Phaser.Scene {
 
     this.hpBarFill = this.add.graphics();
     this.redrawHPBar();
+    this.hpBarFill.setDepth(10);
   }
 
   private redrawHPBar() {
@@ -104,6 +106,7 @@ export class MainScene extends Phaser.Scene {
     const bg = this.add.graphics();
     bg.fillStyle(0x080810, 0.95);
     bg.fillRect(0, PLAY_BOTTOM, W, H - PLAY_BOTTOM);
+    bg.setDepth(9);
 
     const line = this.add.graphics();
     line.lineStyle(1, 0x333355, 1);
@@ -233,13 +236,14 @@ export class MainScene extends Phaser.Scene {
           this.hp = Math.max(0, this.hp - 10);
           this.redrawHPBar();
           this.flashHitMessage(item.getData('label') as string);
+          if (this.hp <= 0) { toRemove.push(item); break; }
         }
         toRemove.push(item);
-        if (this.hp <= 0) { this.removeItem(item); this.endGame(); return; }
       }
     }
 
     for (const item of toRemove) this.removeItem(item);
+    if (this.hp <= 0) this.endGame();
   }
 
   private processAchievements() {
@@ -272,6 +276,7 @@ export class MainScene extends Phaser.Scene {
       targets: c, y: H - 88, duration: 380, ease: 'Back.easeOut',
       onComplete: () => {
         this.time.delayedCall(2500, () => {
+          if (this.gameOverActive) { c.destroy(); return; }
           this.tweens.add({
             targets: c, y: H + 60, duration: 280, ease: 'Power2.easeIn',
             onComplete: () => c.destroy(),
@@ -287,10 +292,13 @@ export class MainScene extends Phaser.Scene {
     this.activeItems = [];
 
     const rank = getScoreRank(this.score);
-    const best = loadBestScore();
-    if (this.score > best.score) saveBestScore(this.score, rank);
+    const prevBest = loadBestScore();
+    if (this.score > prevBest.score) saveBestScore(this.score, rank);
+    const displayBest = this.score > prevBest.score
+      ? { score: this.score, rank }
+      : prevBest;
 
-    this.buildGameOverScreen(rank, best.score, best.rank);
+    this.buildGameOverScreen(rank, displayBest.score, displayBest.rank);
   }
 
   private buildGameOverScreen(rank: string, bestScore: number, bestRank: string) {
