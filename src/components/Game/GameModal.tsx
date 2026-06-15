@@ -21,16 +21,16 @@ export default function GameModal({ open, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative"
+        className="relative z-[100]"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute -top-9 right-0 text-white/70 text-xl font-bold hover:text-red-400 transition-colors leading-none"
+          className="absolute -top-9 right-0 text-white/70 text-xl font-bold hover:text-red-400 transition-colors leading-none z-[101]"
           aria-label="Close game"
         >
           ✕ close
