@@ -279,10 +279,7 @@ export class MainScene extends Phaser.Scene {
       this.rankLabel.setText(getScoreRank(this.score));
       this.floatText(x, y, '+10', '#00ff88');
     } else {
-      this.hp = Math.min(100, this.hp + 5);
-      this.powerupsCollected++;
-      this.redrawHPBar();
-      this.floatText(x, y, '+5 HP', '#00ccff');
+      this.floatText(x, y, 'Wasted!', '#ff8800');
     }
 
     this.processAchievements();
@@ -318,6 +315,12 @@ export class MainScene extends Phaser.Scene {
           this.redrawHPBar();
           this.flashHitMessage(item.getData('label') as string);
           if (this.hp <= 0) { toRemove.push(item); break; }
+        } else {
+          this.hp = Math.min(100, this.hp + 5);
+          this.powerupsCollected++;
+          this.redrawHPBar();
+          this.floatText(item.x, PLAY_BOTTOM - 10, '+5 HP', '#00ccff');
+          this.processAchievements();
         }
         toRemove.push(item);
       }
