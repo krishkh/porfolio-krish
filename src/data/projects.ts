@@ -76,7 +76,7 @@ export const projects: ProjectDetail[] = [
     images: [{ url: "/projects/eclipse-landing.png", type: "desktop" }],
   },
   {
-    id: 11,
+    id: 12,
     title: "Blosical",
     description:
       "A zero-fee e-commerce platform for independent artists to sell music, merchandise, and experiences directly to fans with instant Stripe payouts.",
