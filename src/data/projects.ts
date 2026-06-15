@@ -76,6 +76,29 @@ export const projects: ProjectDetail[] = [
     images: [{ url: "/projects/eclipse-landing.png", type: "desktop" }],
   },
   {
+    id: 11,
+    title: "Blosical",
+    description:
+      "A zero-fee e-commerce platform for independent artists to sell music, merchandise, and experiences directly to fans with instant Stripe payouts.",
+    imageUrl: "/projects/blosical.png",
+    link: "/projects/blosical",
+    projectOverview:
+      "Blosical is a premiere storefront platform designed specifically for independent artists. It enables musicians to sell digital releases, physical merchandise, event tickets, and custom experiences directly to their audience—without intermediary fees or revenue cuts. Artists get 100% of their revenue with instant payouts via Stripe within 24 hours. The platform includes customizable landing pages, comprehensive analytics (page views, CTR, referrers), product management for digital and physical goods, order tracking, and social link integration.",
+    problemStatement:
+      "Independent artists struggle to monetize their work through streaming platforms and traditional marketplaces that take significant revenue cuts. Existing solutions fragment artist presence across multiple platforms, lack customization, impose high fees, and delay payouts. Artists need a unified, professional storefront that gives them complete control over pricing, presentation, and earnings while building direct fan relationships.",
+    myRole: [
+      "Full-stack development",
+      "Frontend architecture",
+      "E-commerce platform design",
+      "Stripe payment integration",
+      "Shippo Shipping API integration",
+      "Analytics dashboard development",
+      "Landing page builder",
+      "Product & order management systems",
+    ],
+    images: [{ url: "/projects/blosical.png", type: "desktop" }],
+  },
+  {
     id: 2,
     title: "Mi Amor",
     description:
