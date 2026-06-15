@@ -9,7 +9,8 @@ export default function PhaserGame() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    let game: import('phaser').Game;
+    let cancelled = false;
+    let game: import('phaser').Game | null = null;
 
     (async () => {
       const [Phaser, { MainScene }] = await Promise.all([
@@ -17,7 +18,7 @@ export default function PhaserGame() {
         import('./scenes/MainScene'),
       ]);
 
-      if (!containerRef.current) return;
+      if (cancelled || !containerRef.current) return;
 
       game = new Phaser.Game({
         type: Phaser.AUTO,
@@ -36,7 +37,9 @@ export default function PhaserGame() {
     })();
 
     return () => {
+      cancelled = true;
       game?.destroy(true);
+      game = null;
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
