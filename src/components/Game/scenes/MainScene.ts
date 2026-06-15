@@ -54,9 +54,14 @@ export class MainScene extends Phaser.Scene {
   private rankLabel!: Phaser.GameObjects.Text;
   private muteBtn!: Phaser.GameObjects.Text;
   private hitMsg!: Phaser.GameObjects.Text;
+  private bgMusic!: Phaser.Sound.BaseSound;
 
   constructor() {
     super({ key: 'MainScene' });
+  }
+
+  preload() {
+    this.load.audio('bgm', '/449938__x3nus__space-syndrome.wav');
   }
 
   create() {
@@ -75,6 +80,13 @@ export class MainScene extends Phaser.Scene {
     this.buildServerVisual();
     this.startElapsedClock();
     this.scheduleSpawn();
+    this.startMusic();
+    this.events.once('shutdown', () => this.bgMusic?.stop());
+  }
+
+  private startMusic() {
+    this.bgMusic = this.sound.add('bgm', { loop: true, volume: 0.12 });
+    if (this.soundEnabled) this.bgMusic.play();
   }
 
   private buildBackground() {
@@ -110,6 +122,11 @@ export class MainScene extends Phaser.Scene {
       this.soundEnabled = !this.soundEnabled;
       saveSoundEnabled(this.soundEnabled);
       this.muteBtn.setText(this.soundEnabled ? '🔊' : '🔇');
+      if (this.soundEnabled) {
+        this.bgMusic?.resume();
+      } else {
+        this.bgMusic?.pause();
+      }
     });
 
     const hpBg = this.add.graphics().setDepth(9);
