@@ -1,4 +1,4 @@
-import MovingChara from "@/components/MovingChara";
+import GameTrigger from "@/components/Game/GameTrigger";
 import Background from "@/components/ui/Background";
 import React from "react";
 
@@ -31,9 +31,7 @@ const MePage = () => {
           <span className="font-thin">&lt;engineer/&gt;</span>
         </p>
       </div>
-      <div className="fixed bottom-0 left-0 right-0 h-44 overflow-hidden pointer-events-none">
-        <MovingChara />
-      </div>
+      <GameTrigger />
     </Background>
   );
 };
