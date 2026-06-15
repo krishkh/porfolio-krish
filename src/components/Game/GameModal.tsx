@@ -25,12 +25,12 @@ export default function GameModal({ open, onClose }: Props) {
       onClick={onClose}
     >
       <div
-        className="relative z-[100]"
+        className="relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute -top-9 right-0 text-white/70 text-xl font-bold hover:text-red-400 transition-colors leading-none z-[101]"
+          className="absolute top-2 right-2 z-10 text-white/70 text-sm font-bold hover:text-red-400 transition-colors leading-none bg-black/40 rounded px-2 py-1"
           aria-label="Close game"
         >
           ✕ close
