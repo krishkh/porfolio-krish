@@ -98,9 +98,13 @@ export class MainScene extends Phaser.Scene {
       fontSize: '12px', color: '#7788aa', fontFamily: 'monospace',
     }).setOrigin(0.5, 0).setDepth(10);
 
-    this.muteBtn = this.add.text(W - 14, 8, this.soundEnabled ? '🔊' : '🔇', {
-      fontSize: '17px',
-    }).setOrigin(1, 0).setInteractive({ cursor: 'pointer' }).setDepth(10);
+    this.add.text(14, 30, '🛡 SERVER HP', {
+      fontSize: '9px', color: '#445566', fontFamily: 'monospace',
+    }).setDepth(10);
+
+    this.muteBtn = this.add.text(W - 14, 44, this.soundEnabled ? '🔊' : '🔇', {
+      fontSize: '15px',
+    }).setOrigin(1, 0.5).setInteractive({ cursor: 'pointer' }).setDepth(11);
 
     this.muteBtn.on('pointerup', () => {
       this.soundEnabled = !this.soundEnabled;
@@ -108,15 +112,11 @@ export class MainScene extends Phaser.Scene {
       this.muteBtn.setText(this.soundEnabled ? '🔊' : '🔇');
     });
 
-    this.add.text(14, 30, '🛡 SERVER HP', {
-      fontSize: '9px', color: '#445566', fontFamily: 'monospace',
-    }).setDepth(10);
-
     const hpBg = this.add.graphics().setDepth(9);
     hpBg.fillStyle(0x111122);
-    hpBg.fillRoundedRect(14, 44, W - 28, 16, 3);
+    hpBg.fillRoundedRect(14, 44, W - 56, 16, 3);
     hpBg.lineStyle(1, 0x223344, 1);
-    hpBg.strokeRoundedRect(14, 44, W - 28, 16, 3);
+    hpBg.strokeRoundedRect(14, 44, W - 56, 16, 3);
 
     this.hpBarFill = this.add.graphics();
     this.redrawHPBar();
@@ -128,7 +128,7 @@ export class MainScene extends Phaser.Scene {
     const pct = Math.max(0, this.hp) / 100;
     const color = pct > 0.6 ? 0x00ff88 : pct > 0.3 ? 0xffcc00 : 0xff3333;
     this.hpBarFill.fillStyle(color, 0.9);
-    this.hpBarFill.fillRoundedRect(14, 44, (W - 28) * pct, 16, 3);
+    this.hpBarFill.fillRoundedRect(14, 44, (W - 56) * pct, 16, 3);
   }
 
   private buildServerVisual() {
