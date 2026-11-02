@@ -236,7 +236,8 @@ export class MainScene extends Phaser.Scene {
   private spawnItem() {
     if (this.activeItems.length >= 15) return;
 
-    const isError = Math.random() < 0.8;
+    // 10 errors (red) for every 1 powerup (green)
+    const isError = Math.random() < 10 / 11;
     const pool = isError ? [...ERRORS] : [...POWERUPS];
     const label = pool[Math.floor(Math.random() * pool.length)];
     const x = Phaser.Math.Between(ITEM_W / 2 + 12, W - ITEM_W / 2 - 12);
